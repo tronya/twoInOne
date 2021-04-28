@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-const isAdmin = true;
+const isAdmin = localStorage.getItem('isAdmin');
 
 const routes: Routes = [
   {

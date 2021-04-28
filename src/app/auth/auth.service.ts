@@ -4,10 +4,8 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  public IsAdmin = false;
-
   public setIsAdmin(val: boolean): void {
-    this.IsAdmin = val;
+    localStorage.setItem('isAdmin', val.toString());
   }
 
   constructor() {
