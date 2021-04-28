@@ -2,6 +2,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "admin": [
+        "dist/admin/admin",
+        "dist/admin"
+      ],
+      "publisher": [
+        "dist/publisher/publisher",
+        "dist/publisher"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

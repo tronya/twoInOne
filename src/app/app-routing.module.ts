@@ -1,10 +1,23 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [];
+const isAdmin = true;
+
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./lazy.admin.module').then(m => m.LazyAdminModule),
+  }
+];
+
+const routes2: Routes = [{
+  path: '',
+  loadChildren: () => import('./lazy.publisher.module').then(m => m.LazyPublisherModule),
+}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(isAdmin ? routes : routes2)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
